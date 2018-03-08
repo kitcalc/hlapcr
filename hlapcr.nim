@@ -9,7 +9,9 @@ type
 
 const outputTmpl = "$#\t$#\t$#\t$#\t$#\t$#"
 
-template log(s: string) = stderr.writeLine(s)
+template log(s: string) =
+    stderr.writeLine(s)
+    stderr.flushFile
 
 proc initAllele(data: XmlNode): Allele =
     ## Initialize allele
@@ -105,6 +107,5 @@ Primer examples:
 
     printHeader()
     printPrimerMatches(subset, fwd, rev)
-    log "ok"
 
 main()
