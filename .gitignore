@@ -1,3 +1,4 @@
 *.exe
 *.xml
 *.zip
+nimcache/
