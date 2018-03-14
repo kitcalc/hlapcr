@@ -10,8 +10,9 @@ type
 const outputTmpl = "$#\t$#\t$#\t$#\t$#\t$#"
 
 template log(s: string) =
-    stderr.writeLine(s)
-    stderr.flushFile
+    when false:
+        stderr.writeLine(s)
+        stderr.flushFile
 
 proc initAllele(data: XmlNode): Allele =
     ## Initialize allele
